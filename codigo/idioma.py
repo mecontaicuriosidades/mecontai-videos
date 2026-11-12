@@ -13,7 +13,7 @@ CONF = {
     # (alternativas ElevenLabs já na biblioteca: ES Lizy br0MPoLVxuslVxf61qHn, EN Tessa BAdH0bMfq6VleQGLXj38,
     #  FR Agathe SptHT9PQ49isQvxFm28t)
     "es": dict(voz="kokoro:ef_dora@es", marca="Cuéntame MAIA", milhar=".", decimal=",", tz="America/Mexico_City", velocidade=1.05),
-    "en": dict(voz="kokoro:af_heart@en-us", marca="MAIA", milhar=",", decimal=".", tz="America/New_York"),
+    "en": dict(voz="kokoro:af_heart@en-us", marca="Tell Me MAIA", milhar=",", decimal=".", tz="America/New_York"),
     "fr": dict(voz="kokoro:ff_siwis@fr-fr", marca="MAIA", milhar=" ", decimal=",", tz="Europe/Paris"),
 }
 
