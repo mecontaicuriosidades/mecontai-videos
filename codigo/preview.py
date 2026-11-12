@@ -2,8 +2,9 @@
 import sys, importlib, motor
 from PIL import Image
 v = importlib.import_module(sys.argv[1]); C = v.CENAS; tot = 0
+voz = motor.escolher_voz(C); print('voz:', voz)
 for c in C:
-    pcm, pal = motor.tts(c['fala']); c['_pcm'], c['_pal'] = pcm, pal
+    pcm, pal = motor.tts(c['fala'], voz); c['_pcm'], c['_pal'] = pcm, pal
     c['_dur'] = len(pcm) / motor.SR + c.get('pausa', 0.45); c['_ini'] = tot; tot += c['_dur']
 print('total', round(tot, 1), [round(c['_dur'], 1) for c in C])
 ims = []

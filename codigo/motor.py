@@ -142,6 +142,44 @@ def tts_kokoro(texto, spec, cache_dir):
     return pcm, [tuple(p) for p in json.load(open(jp))]
 
 
+# ---------------- troca automática para a voz gratuita ----------------
+VOZ_GRATIS = {"pt": "kokoro:pf_dora@pt-br"}
+
+
+def creditos_elevenlabs():
+    """Caracteres que ainda restam no plano da ElevenLabs (None se não der para consultar)."""
+    try:
+        key = open(os.path.expanduser("~/.secrets/elevenlabs")).read().strip()
+        req = urllib.request.Request("https://api.elevenlabs.io/v1/user/subscription", headers={"xi-api-key": key})
+        d = json.load(urllib.request.urlopen(req, timeout=30))
+        return d["character_limit"] - d["character_count"]
+    except Exception:
+        return None
+
+
+def escolher_voz(cenas, voz=None, cache_dir="_cache_voz"):
+    """Usa a voz configurada; se for ElevenLabs e não houver créditos para o vídeo INTEIRO,
+    usa a voz gratuita (Kokoro) no vídeo todo, para não misturar vozes."""
+    import hashlib
+    voz = voz or idioma.conf()["voz"]
+    if voz.startswith("kokoro:"):
+        return voz
+    vel = idioma.conf().get("velocidade", 1.0)
+    falta = 0
+    for c in cenas:
+        h = hashlib.md5((voz + c["fala"] + (f"@{vel}" if vel != 1.0 else "")).encode()).hexdigest()[:16]
+        if not os.path.exists(os.path.join(cache_dir, h + ".json")):
+            falta += len(c["fala"])
+    if falta == 0:
+        return voz
+    resta = creditos_elevenlabs()
+    if resta is None or resta < falta + 200:
+        gratis = VOZ_GRATIS.get(idioma.LANG)
+        print(f"AVISO: ElevenLabs sem créditos suficientes (restam {resta}, precisa {falta}). Usando voz gratuita {gratis}.")
+        return gratis
+    return voz
+
+
 def envelope(pcm, n_frames):
     """Abertura da boca 0..1 por quadro, a partir do volume da voz."""
     hop = SR // FPS
@@ -228,7 +266,7 @@ def marca(d):
 
 # ---------------- render ----------------
 def render(cenas, saida, voz=None):
-    voz = voz or idioma.conf()["voz"]
+    voz = escolher_voz(cenas, voz)
     tmpdir = os.path.dirname(os.path.abspath(saida))
     vozes, total = [], 0.0
     for c in cenas:
