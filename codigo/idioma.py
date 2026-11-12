@@ -35,7 +35,12 @@ def ativar(lang, tema=None, pasta=None):
 
 
 def conf():
-    return CONF[LANG]
+    """Configuração do idioma ativo. A variável de ambiente MAIA_VOZ força uma voz
+    (ex.: MAIA_VOZ=kokoro:pf_dora@pt-br para usar a voz gratuita no português)."""
+    c = dict(CONF[LANG])
+    if os.environ.get("MAIA_VOZ"):
+        c["voz"] = os.environ["MAIA_VOZ"]
+    return c
 
 
 def tr(s):
