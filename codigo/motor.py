@@ -12,6 +12,8 @@ import base64, json, math, os, subprocess, wave, urllib.request
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from maia import maia_pose
+import idioma
+from idioma import tr
 
 W, H, FPS = 1080, 1920, 30
 SR = 44100
@@ -41,12 +43,14 @@ def tts(texto, voz=VOZ_ALICE, cache_dir="_cache_voz"):
     """Retorna (pcm float32 mono 44.1k, lista de palavras [(palavra, ini, fim)])."""
     os.makedirs(cache_dir, exist_ok=True)
     import hashlib
-    h = hashlib.md5((voz + texto).encode()).hexdigest()[:16]
+    vel = idioma.conf().get("velocidade", 1.0)
+    h = hashlib.md5((voz + texto + (f"@{vel}" if vel != 1.0 else "")).encode()).hexdigest()[:16]
     jpath = os.path.join(cache_dir, h + ".json")
     if not os.path.exists(jpath):
         key = open(os.path.expanduser("~/.secrets/elevenlabs")).read().strip()
         body = json.dumps({"text": texto, "model_id": "eleven_multilingual_v2",
-                           "voice_settings": {"stability": 0.45, "similarity_boost": 0.8, "style": 0.35}}).encode()
+                           "voice_settings": {"stability": 0.45, "similarity_boost": 0.8, "style": 0.35,
+                                              **({"speed": vel} if vel != 1.0 else {})}}).encode()
         req = urllib.request.Request(
             f"https://api.elevenlabs.io/v1/text-to-speech/{voz}/with-timestamps?output_format=mp3_44100_128",
             data=body, headers={"xi-api-key": key, "Content-Type": "application/json"})
@@ -100,6 +104,7 @@ def fundo(d, T, c1, c2, estrelas=True):
 
 
 def texto(img, s, y, size, t_in, t, cor=(255, 255, 255), borda=(10, 15, 40), maxw=960):
+    s = tr(s)
     if t < t_in: return
     sc = pop((t - t_in) / 0.45)
     if sc <= 0.02: return
@@ -146,13 +151,16 @@ def legenda(img, palavras, t, y):
 
 
 def marca(d):
-    d.rounded_rectangle([30, 40, 330, 110], 34, fill=(10, 15, 40), outline=CIANO, width=4)
-    d.text((180, 75), "Me ContAI", font=fnt(40), fill=(255, 255, 255), anchor="mm")
-    d.ellipse([290, 52, 316, 78], fill=AMARELO)
+    nome = idioma.conf()["marca"]
+    w = max(300, int(fnt(40).getlength(nome)) + 110)
+    d.rounded_rectangle([30, 40, 30 + w, 110], 34, fill=(10, 15, 40), outline=CIANO, width=4)
+    d.text((30 + (w - 40) / 2, 75), nome, font=fnt(40), fill=(255, 255, 255), anchor="mm")
+    d.ellipse([w - 10, 52, w + 16, 78], fill=AMARELO)
 
 
 # ---------------- render ----------------
-def render(cenas, saida, voz=VOZ_ALICE):
+def render(cenas, saida, voz=None):
+    voz = voz or idioma.conf()["voz"]
     tmpdir = os.path.dirname(os.path.abspath(saida))
     vozes, total = [], 0.0
     for c in cenas:
@@ -203,7 +211,7 @@ def frame(c, t, T, boca, total):
             s = ease(t / 0.5) if tp == "gancho" and c["_ini"] == 0 else 1
             y = 860 + int((1 - s) * 500)
             img.alpha_composite(m, ((W - m.width) // 2, y))
-        tam = 140 if len(c["titulo"]) <= 16 else 96
+        tam = 140 if len(tr(c["titulo"])) <= 16 else 96
         texto(img, c["titulo"], 300 if tam == 140 else 290, tam, 0.15, t, cor=AMARELO if tp == "cta" else (255, 255, 255))
         if c.get("subtitulo"): texto(img, c["subtitulo"], 560, 56, 0.6, t, cor=CIANO)
         legenda(img, c["_pal"], t, 1330 if c.get("desenho") else 720)

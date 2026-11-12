@@ -2,18 +2,21 @@
 import math
 import numpy as np
 from motor import fnt, pop, ease, AMARELO, CIANO
+import idioma
+from idioma import tr
 
 O = (20, 15, 40)  # contorno padrão
 
 
-def rotulo(d, x, y, txt, tam=44, cor=(255, 255, 255)):
+def rotulo(d, x, y, txt, tam=44, cor=(255, 255, 255), traduzir=True):
+    if traduzir: txt = tr(txt)
     d.text((x, y), txt, font=fnt(tam), fill=cor, anchor="mm", stroke_width=max(4, tam // 8), stroke_fill=O)
 
 
 def contador(d, x, y, alvo, t, dur=2.0, tam=96, sufixo="", cor=AMARELO):
     n = alvo * ease(t / dur)
-    s = f"{n:,.0f}".replace(",", ".") if (alvo >= 100 or isinstance(alvo, int)) else f"{n:.1f}".replace(".", ",")
-    rotulo(d, x, y, s + sufixo, tam, cor)
+    s = idioma.num(n, 0) if (alvo >= 100 or isinstance(alvo, int)) else idioma.num(n, 1)
+    rotulo(d, x, y, s + tr(sufixo), tam, cor, traduzir=False)
 
 
 def olhos(d, cx, cy, T, esp=60, r=26, piscada=3.1):
