@@ -13,3 +13,4 @@ Os exemplos importam `video_polvo` (função `polvo`), por isso ele também est�
 - `idioma.py`: configuração de cada idioma (voz, nome no selo, formato de números, fuso). Em português nada muda.
 - `traducoes/<tema>.json`: tabela "texto em português" → tradução, por idioma.
 - `traduzir.py`: `python3 traduzir.py video_venus es --listar` (o que falta traduzir), `--preview folha.jpg`, ou `out/venus_es.mp4` para renderizar.
+- Vozes de ES/EN/FR: **Kokoro** (gratuito, roda local). Antes de renderizar: `pip install --break-system-packages kokoro-onnx soundfile` (o modelo de ~350 MB é baixado sozinho para ~/kokoro na 1ª vez).

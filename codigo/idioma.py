@@ -9,12 +9,12 @@ import json, os
 
 CONF = {
     "pt": dict(voz="xMGbstDe7gGBMg3DqxOc", marca="Me ContAI", milhar=".", decimal=",", tz="America/Sao_Paulo"),
-    # Lizy - Vibrant, Dynamic and Persuasive (latino-americana), escolhida em 12/11/2026
-    "es": dict(voz="br0MPoLVxuslVxf61qHn", marca="Cuéntame MAIA", milhar=".", decimal=",", tz="America/Mexico_City", velocidade=1.1),
-    # candidatas: Tessa BAdH0bMfq6VleQGLXj38 | Elise EST9Ui6982FZPSi7gCHi (escolher)
-    "en": dict(voz="BAdH0bMfq6VleQGLXj38", marca="MAIA", milhar=",", decimal=".", tz="America/New_York"),
-    # candidatas: Agathe SptHT9PQ49isQvxFm28t | Victoria O31r762Gb3WFygrEOGh0 (escolher)
-    "fr": dict(voz="SptHT9PQ49isQvxFm28t", marca="MAIA", milhar=" ", decimal=",", tz="Europe/Paris"),
+    # Vozes gratuitas Kokoro (escolhidas em 12/11/2026): "kokoro:<voz>@<idioma>"
+    # (alternativas ElevenLabs já na biblioteca: ES Lizy br0MPoLVxuslVxf61qHn, EN Tessa BAdH0bMfq6VleQGLXj38,
+    #  FR Agathe SptHT9PQ49isQvxFm28t)
+    "es": dict(voz="kokoro:ef_dora@es", marca="Cuéntame MAIA", milhar=".", decimal=",", tz="America/Mexico_City", velocidade=1.05),
+    "en": dict(voz="kokoro:af_heart@en-us", marca="MAIA", milhar=",", decimal=".", tz="America/New_York"),
+    "fr": dict(voz="kokoro:ff_siwis@fr-fr", marca="MAIA", milhar=" ", decimal=",", tz="Europe/Paris"),
 }
 
 LANG = "pt"

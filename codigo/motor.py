@@ -42,6 +42,8 @@ def pop(t):
 def tts(texto, voz=VOZ_ALICE, cache_dir="_cache_voz"):
     """Retorna (pcm float32 mono 44.1k, lista de palavras [(palavra, ini, fim)])."""
     os.makedirs(cache_dir, exist_ok=True)
+    if voz.startswith("kokoro:"):
+        return tts_kokoro(texto, voz.split(":", 1)[1], cache_dir)
     import hashlib
     vel = idioma.conf().get("velocidade", 1.0)
     h = hashlib.md5((voz + texto + (f"@{vel}" if vel != 1.0 else "")).encode()).hexdigest()[:16]
@@ -72,6 +74,72 @@ def tts(texto, voz=VOZ_ALICE, cache_dir="_cache_voz"):
             cur += ch; fim = b
     if cur: palavras.append((cur, ini, fim))
     return pcm, palavras
+
+
+# ---------------- voz gratuita (Kokoro, código aberto, Apache-2.0) ----------------
+KOKORO_DIR = os.path.expanduser(os.environ.get("KOKORO_DIR", "~/kokoro"))
+KOKORO_URL = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/"
+_kokoro = None
+
+
+def _kokoro_modelo():
+    """Carrega o Kokoro (baixa o modelo na 1ª vez; requer: pip install kokoro-onnx soundfile)."""
+    global _kokoro
+    if _kokoro is None:
+        from kokoro_onnx import Kokoro
+        os.makedirs(KOKORO_DIR, exist_ok=True)
+        for f in ("kokoro-v1.0.onnx", "voices-v1.0.bin"):
+            p = os.path.join(KOKORO_DIR, f)
+            if not os.path.exists(p) or os.path.getsize(p) < 1e6:
+                urllib.request.urlretrieve(KOKORO_URL + f, p)
+        _kokoro = Kokoro(os.path.join(KOKORO_DIR, "kokoro-v1.0.onnx"), os.path.join(KOKORO_DIR, "voices-v1.0.bin"))
+    return _kokoro
+
+
+def _apara(s, sr, lim=0.012):
+    """Remove silêncio do começo e do fim (deixa 30 ms de folga)."""
+    idx = np.where(np.abs(s) > lim)[0]
+    if not len(idx): return s
+    a, b = max(0, idx[0] - int(0.03 * sr)), min(len(s), idx[-1] + int(0.03 * sr))
+    return s[a:b]
+
+
+def tts_kokoro(texto, spec, cache_dir):
+    """spec = "voz@lang" (ex.: ef_dora@es). Gera a fala por trechos (vírgula/ponto) e
+    estima o tempo de cada palavra proporcionalmente às letras dentro do trecho."""
+    import hashlib, re
+    vel = idioma.conf().get("velocidade", 1.0)
+    h = hashlib.md5(f"kokoro|{spec}|{vel}|{texto}".encode()).hexdigest()[:16]
+    wav, jp = os.path.join(cache_dir, h + ".wav"), os.path.join(cache_dir, h + ".words.json")
+    if not os.path.exists(jp):
+        voz, lang = spec.split("@")
+        k = _kokoro_modelo()
+        trechos = [t.strip() for t in re.findall(r"[^,.!?;:]+[,.!?;:…]*", texto) if t.strip()]
+        partes, palavras, t0 = [], [], 0.0
+        for tr_ in trechos:
+            s, sr = k.create(tr_, voice=voz, speed=vel, lang=lang)
+            s = _apara(np.asarray(s, dtype=np.float32), sr)
+            if sr != SR:
+                raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-",
+                                      "-f", "f32le", "-ar", str(SR), "-"], input=s.tobytes(), capture_output=True, check=True).stdout
+                s = np.frombuffer(raw, dtype=np.float32).copy()
+            dur = len(s) / SR
+            ws = tr_.split(); pesos = [len(w) + 2 for w in ws]; tot = sum(pesos); acc = 0
+            for w, p in zip(ws, pesos):
+                a = t0 + dur * acc / tot; acc += p
+                palavras.append((w, a, t0 + dur * acc / tot))
+            pausa = 0.32 if tr_[-1] in ".!?…" else (0.16 if tr_[-1] in ",;:" else 0.08)
+            partes += [s, np.zeros(int(SR * pausa), dtype=np.float32)]
+            t0 += dur + pausa
+        pcm = np.concatenate(partes[:-1]) if partes else np.zeros(1, dtype=np.float32)
+        pcm = pcm / max(1e-9, np.abs(pcm).max()) * 0.9
+        with wave.open(wav, "w") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
+            w.writeframes((np.clip(pcm, -1, 1) * 32767).astype(np.int16).tobytes())
+        json.dump(palavras, open(jp, "w"))
+    with wave.open(wav) as w:
+        pcm = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32767
+    return pcm, [tuple(p) for p in json.load(open(jp))]
 
 
 def envelope(pcm, n_frames):
