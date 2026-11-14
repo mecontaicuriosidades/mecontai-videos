@@ -77,7 +77,7 @@ def c_ph(d, img, t, T):
     lago(d, 1080, T)
     nivel = 7 + ease(t / 2.0) * 3.5
     medidor(d, 155, 780, nivel, T)
-    rotulo(d, 155 + 3.5 * 110, 650, "pH 10,5", 70, AMARELO, traduzir=False)
+    rotulo(d, 155 + 3.5 * 110, 650, "pH " + __import__("idioma").num(10.5, 1), 70, AMARELO, traduzir=False)
     if t > 2.0:
         rotulo(d, 540, 960, "QUEIMA A PELE", 56, (255, 140, 140))
 
