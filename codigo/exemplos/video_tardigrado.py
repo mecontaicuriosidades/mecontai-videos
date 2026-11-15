@@ -66,7 +66,7 @@ def c_musgo(d, img, t, T):
     d.line([(cx - r * 0.7, cy + r * 0.7), (cx - r * 1.1, cy + r * 1.15)], fill=O, width=40)
     tardigrado(d, cx - 20, cy, 0.75, T)
     if t > 1.0:
-        rotulo(d, 560, 1130, "0,5 mm", 66, AMARELO)
+        rotulo(d, 560, 1130, __import__("idioma").num(0.5, 1) + " mm", 66, AMARELO, traduzir=False)
 
 
 def c_barril(d, img, t, T):
