@@ -318,14 +318,14 @@ def frame(c, t, T, boca, total):
             y = 860 + int((1 - s) * 500)
             img.alpha_composite(m, ((W - m.width) // 2, y))
         tam = 140 if len(tr(c["titulo"])) <= 16 else 96
-        texto(img, c["titulo"], 300 if tam == 140 else 290, tam, 0.15, t, cor=AMARELO if tp == "cta" else (255, 255, 255))
-        if c.get("subtitulo"): texto(img, c["subtitulo"], 560, 56, 0.6, t, cor=CIANO)
+        texto(img, c["titulo"], c.get("titulo_y", 300 if tam == 140 else 290), tam, 0.15, t, cor=AMARELO if tp == "cta" else (255, 255, 255))
+        if c.get("subtitulo"): texto(img, c["subtitulo"], c.get("subtitulo_y", 560), 56, 0.6, t, cor=CIANO)
         legenda(img, c["_pal"], t, 1330 if c.get("desenho") else 720)
     else:
         c1, c2 = c.get("fundo", (NAVY1, NAVY2))
         fundo(d, T, c1, c2, estrelas=c.get("estrelas", False))
         c["desenho"](d, img, t, T)
-        texto(img, c["titulo"], 300, 104, 0.1, t)
+        texto(img, c["titulo"], c.get("titulo_y", 300), 104, 0.1, t)
         legenda(img, c["_pal"], t, 1330)
         m = maia_pose(T, boca, escala=0.5)  # MAIA pequena no canto, comentando
         img.alpha_composite(m, (W - m.width + 20, H - m.height + 40))
