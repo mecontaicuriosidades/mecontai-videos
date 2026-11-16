@@ -1,7 +1,7 @@
 """Biblioteca de desenhos reutilizáveis (estilo cartoon, contorno escuro)."""
 import math
 import numpy as np
-from motor import fnt, pop, ease, AMARELO, CIANO
+from motor import fnt, pop, ease, AMARELO, CIANO, limpa_emoji
 import idioma
 from idioma import tr
 
@@ -10,6 +10,7 @@ O = (20, 15, 40)  # contorno padrão
 
 def rotulo(d, x, y, txt, tam=44, cor=(255, 255, 255), traduzir=True):
     if traduzir: txt = tr(txt)
+    txt = limpa_emoji(txt)
     d.text((x, y), txt, font=fnt(tam), fill=cor, anchor="mm", stroke_width=max(4, tam // 8), stroke_fill=O)
 
 

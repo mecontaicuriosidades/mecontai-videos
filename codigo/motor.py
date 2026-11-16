@@ -209,8 +209,14 @@ def fundo(d, T, c1, c2, estrelas=True):
             d.ellipse([x - r, y - r, x + r, y + r], fill=c)
 
 
+def limpa_emoji(s):
+    """A fonte dos vídeos não tem emojis: troca ➕ por + e remove os demais (evita quadradinhos na tela)."""
+    s = s.replace("\u2795", "+").replace("\u271a", "+")
+    return "".join(ch for ch in s if not (0x2190 <= ord(ch) <= 0x2BFF or ord(ch) >= 0x1F000 or ch in "\ufe0f\u200d")).strip()
+
+
 def texto(img, s, y, size, t_in, t, cor=(255, 255, 255), borda=(10, 15, 40), maxw=960):
-    s = tr(s)
+    s = limpa_emoji(tr(s))
     if t < t_in: return
     sc = pop((t - t_in) / 0.45)
     if sc <= 0.02: return
