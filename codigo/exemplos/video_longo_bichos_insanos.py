@@ -112,7 +112,7 @@ CENAS += [dict(tipo="cta", titulo="CHEGAMOS NA METADE!", subtitulo="Se inscreve 
 CENAS += item(5, "BAIACU", "1.200 vezes mais forte que cianeto", ((20, 60, 70), (5, 20, 30)),
     (ba.g_baiacu, "Número cinco: o baiacu, o fugu do Japão. Ele carrega um veneno mil e duzentas vezes mais forte que cianeto. E mesmo assim, tem gente que paga caro pra comer."),
     [("ONDE FICA O VENENO", ba.c_onde, ((40, 120, 150), (10, 40, 70)),
-      "O veneno, a tetrodotoxina, fica principalmente no fígado, nos ovários e na pele. E o mais curioso: o baiacu não fabrica o veneno sozinho. Ele vem de bactérias que entram pela comida."),
+      "O veneno, a tetrodotoxina, fica principalmente no fígado, nos ovários, nos olhos e na pele. E o mais curioso: o baiacu não fabrica o veneno sozinho. Ele vem de bactérias que entram pela comida."),
      ("NÃO TEM ANTÍDOTO", ba.c_antidoto, ((70, 30, 90), (25, 10, 40)),
       "Não existe antídoto. O veneno bloqueia os nervos e paralisa os músculos, mas a pessoa continua acordada. O tratamento é manter a respiração até o corpo eliminar o veneno."),
      ("SÓ COM LICENÇA", ba.c_licenca, ((150, 90, 40), (70, 35, 15)),
