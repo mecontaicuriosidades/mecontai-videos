@@ -14,3 +14,8 @@ Os exemplos importam `video_polvo` (função `polvo`), por isso ele também est�
 - `traducoes/<tema>.json`: tabela "texto em português" → tradução, por idioma.
 - `traduzir.py`: `python3 traduzir.py video_venus es --listar` (o que falta traduzir), `--preview folha.jpg`, ou `out/venus_es.mp4` para renderizar.
 - Vozes de ES/EN/FR: **Kokoro** (gratuito, roda local). Antes de renderizar: `pip install --break-system-packages kokoro-onnx soundfile` (o modelo de ~350 MB é baixado sozinho para ~/kokoro na 1ª vez).
+
+## Vídeo longo horizontal (desde 17/11/2026)
+- `motor_longo.py`: motor 16:9 (1920x1080) para o vídeo longo semanal. Reaproveita voz, trilha e MAIA do motor dos Shorts (que continua vertical).
+- Cenas: `abre` (#n + nome + desenho), `fato` (painel + título + MAIA), `ficha` (número gigante) e `cta`. Desenhos dos Shorts entram com `vert=` (recortados e ampliados).
+- Modelo: `exemplos/video_longo_bichos_insanos.py` (`--folha folha.jpg 0` para conferir; sem argumento renderiza e imprime os capítulos). Capa: `exemplos/capa_longo_bichos_insanos.py`.
