@@ -1,4 +1,5 @@
-{"es": {
+{
+ "es": {
   "Esse metal derrete na palma da sua mão! E o último fato é o pior.": "¡Este metal se derrite en la palma de tu mano! Y el último dato es el peor.",
   "DERRETE!": "¡SE DERRITE!",
   "CIÊNCIA BIZARRA #1 · P1": "CIENCIA BIZARRA #1 · P1",
@@ -15,4 +16,23 @@
   "CRACK!": "¡CRACK!",
   "E o pior: tem outro metal que ele destrói só de encostar. Segue a Maia pra ver a parte dois às seis da tarde. Porque esse metal...": "Y lo peor: hay otro metal que destruye con solo tocarlo. Sigue a Maia para ver la parte dos a las seis de la tarde. Porque este metal...",
   "PARTE 2 ÀS 18H": "PARTE 2 A LAS 6 PM"
-}}
+ },
+ "en": {
+  "Esse metal derrete na palma da sua mão! E o último fato é o pior.": "This metal melts right in the palm of your hand! And the last fact is the worst.",
+  "DERRETE!": "IT MELTS!",
+  "CIÊNCIA BIZARRA #1 · P1": "WEIRD SCIENCE #1 · P1",
+  "É o gálio. Segue a Maia, que piora: ele derrete a uns trinta graus, e a sua mão tem uns trinta e seis.": "It's gallium. Follow Maia, it gets worse: it melts at about thirty degrees Celsius, and your hand is about thirty-six.",
+  "O GÁLIO": "GALLIUM",
+  "SEGUE A MAIA +": "FOLLOW MAIA +",
+  "GÁLIO 30 °C": "GALLIUM 30 °C",
+  "MÃO 36 °C": "HAND 36 °C",
+  "Uma colher de gálio some dentro de um chá quente, como se fosse gelo.": "A gallium spoon vanishes in hot tea, just like ice.",
+  "SUMIU": "GONE",
+  "SUMIU?!": "GONE?!",
+  "E quando volta a ficar sólido, ele incha, igual à água, e pode até rachar o vidro do pote.": "And when it turns solid again, it expands, just like water, and can even crack its glass jar.",
+  "CONGELA": "IT FREEZES",
+  "CRACK!": "CRACK!",
+  "E o pior: tem outro metal que ele destrói só de encostar. Segue a Maia pra ver a parte dois às seis da tarde. Porque esse metal...": "And the worst part: there's another metal it destroys just by touching it. Follow Maia for part two at six PM. Because this metal...",
+  "PARTE 2 ÀS 18H": "PART 2 AT 6 PM"
+ }
+}

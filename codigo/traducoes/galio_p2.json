@@ -1,4 +1,5 @@
-{"es": {
+{
+ "es": {
   "Esse metal que derrete na mão destrói alumínio só de encostar! E o final é o mais louco.": "¡Este metal que se derrite en la mano destruye el aluminio con solo tocarlo! Y el final es lo más loco.",
   "COME METAL": "COME METAL",
   "CIÊNCIA BIZARRA #1 · P2": "CIENCIA BIZARRA #1 · P2",
@@ -17,4 +18,25 @@
   "PREVISTO": "PREDICHO",
   "Segue pra ver a próxima Ciência Bizarra amanhã. Porque esse metal...": "Sígueme para ver la próxima Ciencia Bizarra mañana. Porque este metal...",
   "Parte 1 no perfil": "Parte 1 en el perfil"
-}}
+ },
+ "en": {
+  "Esse metal que derrete na mão destrói alumínio só de encostar! E o final é o mais louco.": "This metal that melts in your hand destroys aluminum just by touching it! And the ending is the craziest.",
+  "COME METAL": "EATS METAL",
+  "CIÊNCIA BIZARRA #1 · P2": "WEIRD SCIENCE #1 · P2",
+  "ALUMÍNIO": "ALUMINUM",
+  "Uma gota de gálio entra no alumínio. Segue pra mais Ciência Bizarra: em horas, a lata quebra com os dedos.": "One drop of gallium soaks into aluminum. Follow for more Weird Science: in hours, the can snaps with your fingers.",
+  "LATA FRÁGIL": "WEAK CAN",
+  "SEGUE A MAIA +": "FOLLOW MAIA +",
+  "CRACK!": "CRACK!",
+  "FEITO BISCOITO": "LIKE A COOKIE",
+  "Por isso o gálio viaja como carga perigosa: avião é cheio de alumínio.": "That's why gallium flies as dangerous cargo: planes are full of aluminum.",
+  "NO AVIÃO": "ON PLANES",
+  "GÁLIO": "GALLIUM",
+  "CARGA": "DANGEROUS",
+  "PERIGOSA": "CARGO",
+  "E o mais louco: o químico Mendeleev previu esse metal quatro anos antes de ele ser descoberto, sem nunca ter visto.": "And the craziest part: the chemist Mendeleev predicted this metal four years before it was discovered, without ever seeing it.",
+  "PREVISTO": "PREDICTED",
+  "Segue pra ver a próxima Ciência Bizarra amanhã. Porque esse metal...": "Follow for the next Weird Science tomorrow. Because this metal...",
+  "Parte 1 no perfil": "Part 1 on my profile"
+ }
+}

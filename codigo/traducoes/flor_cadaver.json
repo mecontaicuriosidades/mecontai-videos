@@ -1,4 +1,5 @@
-{"es": {
+{
+ "es": {
   "Essa flor tem três metros e fede a carne podre! E o último fato é o pior.": "¡Esta flor mide tres metros y apesta a carne podrida! Y el último dato es el peor.",
   "FEDE!": "¡APESTA!",
   "BICHOS INSANOS #5": "ANIMALES INSANOS #5",
@@ -18,4 +19,26 @@
   "SÓ 1 OU 2 DIAS": "SOLO 1 O 2 DÍAS",
   "Segue a Maia: amanhã tem mais Bichos Insanos. Porque essa flor...": "Sigue a Maia: mañana hay más Animales Insanos. Porque esta flor...",
   "Segue a Maia +": "Sigue a Maia +"
-}}
+ },
+ "en": {
+  "Essa flor tem três metros e fede a carne podre! E o último fato é o pior.": "This flower is three meters tall and smells like rotting meat! And the last fact is the worst.",
+  "FEDE!": "IT STINKS!",
+  "BICHOS INSANOS #5": "INSANE ANIMALS #5",
+  "É a flor-cadáver, da ilha de Sumatra. Segue a Maia, que piora: o fedor atrai moscas e besouros de carniça.": "It's the corpse flower, from the island of Sumatra. Follow Maia, it gets worse: the stench attracts flies and carrion beetles.",
+  "FLOR-CADÁVER": "CORPSE FLOWER",
+  "SEGUE A MAIA +": "FOLLOW MAIA +",
+  "SUMATRA": "SUMATRA",
+  "INDONÉSIA": "INDONESIA",
+  "MOSCAS": "FLIES",
+  "BESOUROS": "BEETLES",
+  "Pra espalhar o cheiro, ela esquenta sozinha, quase na temperatura do corpo humano.": "To spread the smell, it heats itself up, almost to human body temperature.",
+  "ESQUENTA": "HEATS UP",
+  "QUASE 36 °C": "ALMOST 36 °C",
+  "E o pior: ela pode levar anos pra florir, e a flor aberta dura só um ou dois dias.": "And the worst part: it can take years to bloom, and the open flower lasts just one or two days.",
+  "RARIDADE": "SO RARE",
+  "ANOS": "YEARS",
+  "SÓ 1 OU 2 DIAS": "ONLY 1–2 DAYS",
+  "Segue a Maia: amanhã tem mais Bichos Insanos. Porque essa flor...": "Follow Maia: more Insane Animals tomorrow. Because this flower...",
+  "Segue a Maia +": "Follow Maia +"
+ }
+}
