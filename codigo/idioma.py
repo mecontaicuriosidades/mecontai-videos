@@ -48,10 +48,10 @@ def tr(s):
     if LANG == "pt" or not isinstance(s, str):
         return s
     core = s.strip()
+    if core in TAB and TAB[core]:  # tradução explícita vale mesmo p/ textos curtos (ex.: "EM 2010")
+        return s.replace(core, TAB[core])
     if sum(ch.isalpha() for ch in core) <= 2:  # números, unidades (m, °C, km)
         return s
-    if core in TAB:
-        return s.replace(core, TAB[core])
     if core not in FALTANDO:
         FALTANDO.append(core)
     return s
