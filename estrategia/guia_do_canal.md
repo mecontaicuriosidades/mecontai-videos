@@ -11,7 +11,7 @@ Vale de 24/11 a 30/11/2026. Mudar só o que está abaixo; o resto do formato v3 
 ### Mudanças a aplicar (por ordem de impacto na meta do YouTube)
 
 1. **Retenção nos primeiros segundos (prioridade 1).** No v3 o YouTube mostrou tempo médio de só ~9 s em vídeos de 30–34 s (v2: 10–20 s), e TODOS os Shorts param em ~1.000–1.500 views (o YouTube não está empurrando nenhum para além do primeiro teste).
-   - Tirar o selo "SEGUE A MAIA +" e o convite curto da faixa de 3–8 s. O convite para seguir fica SÓ no fim (o convite específico do fim continua).
+   - DECISÃO DO WELLINGTON (24/11): NUNCA usar "Segue a Maia" — nem selo, nem fala, nem legenda (passa a impressão de que o vídeo é pior). Sem convite no meio; o fim só anuncia o que vem (ex.: "A parte dois sai hoje às seis da tarde", "Amanhã tem mais Bichos Insanos").
    - Primeiro 1 s: já mostrar o fato mais chocante (número/imagem), sem apresentação. Ex.: "1.746 pessoas morreram numa noite. Sem fogo." em vez de "Esse lago...".
    - Duração alvo: 20–28 s (cortar frases de transição; manter 3 fatos, o pior por último).
    - Medir: tempo médio no YouTube (meta ≥ 12 s) e views por Short (meta: algum vídeo > 3.000).
@@ -28,8 +28,11 @@ Vale de 24/11 a 30/11/2026. Mudar só o que está abaixo; o resto do formato v3 
    - Ciência Bizarra e Tecnologia Insana: manter como avulso até ter dados.
    - Medir: média de views por série no YouTube.
 
+### Quantidade (decisão do Wellington em 24/11)
+- 4 Shorts por dia no canal PT: Parte 1 às 10h, avulsos às 14h e 16h, Parte 2 às 18h.
+
 ### O que manter
-- Séries com nome e número; Parte 1 às 10h / avulso 16h / Parte 2 às 18h; final em loop; mesma voz no dia.
+- Séries com nome e número; final em loop; mesma voz no dia.
 - Rótulo de IA SEMPRE ligado em todas as redes (YouTube isAiGeneratedContent, TikTok isAigc, Instagram ES/EN isAiGenerated).
 - Só fatos verificados; nada copiado de terceiros.
 - Vídeo longo semanal (primeiro: "Os 10 bichos mais insanos", 22/11) — continuar 1 por semana se o Wellington aprovar (ver decisões).
@@ -64,12 +67,13 @@ Regra nova (blog oficial do YouTube, 10/08/2026): a partir de 01/02/2027 novos c
 | 17–22/11/2026 | Formato v3 (25–35 s, 3 séries, Parte 1/2, selo 3–8 s, convite no fim, loop) | YouTube: views/dia +8% (3.170 x 2.940), views/vídeo 1.112 x 1.189 (v2 13–16/11), inscritos por mil views ≈2,1 x ≈2,0, tempo médio caiu p/ ~9 s. TikTok: views −24% (6.637 x 8.763), seguidores/mil 0,6 x 1,1. Facebook: views −19% (4.885 x 6.055), seguidores/mil 1,0 x 0,8. | Não melhorou a conversão (inconclusivo no YouTube, pior no TikTok) |
 | 17–22/11/2026 | Série em 2 partes | YouTube: Parte 2 > Parte 1 (1.325 x 1.134 views); TikTok/Facebook: Parte 1 > Parte 2 | Funcionou no YouTube; manter |
 | 22/11/2026 | 1º vídeo longo (10 bichos mais insanos, 8:47) | Facebook: 289 views, 18 s médios; YouTube: dado ainda não disponível | Inconclusivo |
-| 24–30/11/2026 | Convite só no fim + gancho no 1º segundo + 20–28 s | (medir em 30/11) | — |
+| 25–30/11/2026 | Sem "Segue a Maia" (decisão do Wellington) + gancho no 1º segundo + 20–28 s | (medir em 30/11) | — |
+| 25–30/11/2026 | 4 Shorts/dia (10h, 14h, 16h, 18h) | (medir em 30/11: views/dia no YouTube) | — |
 | 24–30/11/2026 | Variar abertura/legenda + frase de opinião da MAIA | (medir em 30/11) | — |
 | 24–30/11/2026 | Mais Bichos Insanos, menos Lugares Mortais | (medir em 30/11) | — |
 
 ## IDEIAS PARA TESTAR DEPOIS (2026-11-16, copiadas de `ideias_para_testar_2026-11-16.md`)
-1. Volume no YouTube: 4–5 Shorts/dia só no YouTube, cada um com roteiro próprio (decisão do Wellington; risco de "produção em massa").
+1. Volume no YouTube: aprovado pelo Wellington em 24/11 — 4 Shorts/dia, cada um com roteiro próprio.
 2. Repetir outliers (corpo humano/perigo extremo) — sem roteiro repetido.
 3. Originalidade visível (opinião da MAIA, variar abertura) — aplicado em 23/11 (mudança 2).
 4. Vídeo longo semanal (compilação com narração nova) — piloto feito em 22/11.
