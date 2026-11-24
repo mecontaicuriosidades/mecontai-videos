@@ -1,20 +1,38 @@
 {
- "es": {
-  "Cabeça transparente, com os olhos lá dentro! E esse peixe existe.": "Este pez tiene la cabeza transparente, ¡con los ojos adentro! Y existe de verdad.",
-  "É DE VIDRO?": "¿DE VIDRIO?",
-  "BICHOS INSANOS #8 · P1": "ANIMALES INSANOS #8 · P1",
-  "TRANSPARENTE": "TRANSPARENTE",
-  "É o peixe-barril: vive a uns setecentos metros de fundo, quase sem luz.": "Es el pez barril: vive a unos setecientos metros de profundidad, casi sin luz.",
-  "PEIXE-BARRIL": "PEZ BARRIL",
-  "QUASE SEM LUZ": "CASI SIN LUZ",
-  "Essas bolinhas na frente? Não são olhos: são o nariz. Eu jurava que era olho!": "¿Esas bolitas de enfrente? No son ojos: son la nariz. ¡Yo juraba que eran ojos!",
-  "NÃO É OLHO": "NO SON OJOS",
-  "OLHOS?": "¿OJOS?",
-  "NARIZ!": "¡NARIZ!",
-  "Os olhos de verdade são esses tubos verdes, virados pra cima.": "Los ojos de verdad son estos tubos verdes, mirando hacia arriba.",
-  "OLHOS-TUBO": "OJOS TUBO",
-  "OLHOS DE VERDADE": "OJOS DE VERDAD",
-  "Às seis tem a parte dois: um segredo de setenta anos. Segue a Maia pra ver! Tudo por causa dessa...": "A las seis llega la parte dos: un secreto de setenta años. ¡Sigue a Maia para verla! Todo por culpa de este...",
-  "PARTE 2 ÀS 18H": "PARTE 2 A LAS 6 PM"
- }
+  "es": {
+    "Cabeça transparente, com os olhos lá dentro! E esse peixe existe.": "Este pez tiene la cabeza transparente, ¡con los ojos adentro! Y existe de verdad.",
+    "É DE VIDRO?": "¿DE VIDRIO?",
+    "BICHOS INSANOS #8 · P1": "ANIMALES INSANOS #8 · P1",
+    "TRANSPARENTE": "TRANSPARENTE",
+    "É o peixe-barril: vive a uns setecentos metros de fundo, quase sem luz.": "Es el pez barril: vive a unos setecientos metros de profundidad, casi sin luz.",
+    "PEIXE-BARRIL": "PEZ BARRIL",
+    "QUASE SEM LUZ": "CASI SIN LUZ",
+    "Essas bolinhas na frente? Não são olhos: são o nariz. Eu jurava que era olho!": "¿Esas bolitas de enfrente? No son ojos: son la nariz. ¡Yo juraba que eran ojos!",
+    "NÃO É OLHO": "NO SON OJOS",
+    "OLHOS?": "¿OJOS?",
+    "NARIZ!": "¡NARIZ!",
+    "Os olhos de verdade são esses tubos verdes, virados pra cima.": "Los ojos de verdad son estos tubos verdes, mirando hacia arriba.",
+    "OLHOS-TUBO": "OJOS TUBO",
+    "OLHOS DE VERDADE": "OJOS DE VERDAD",
+    "Às seis tem a parte dois: um segredo de setenta anos. Segue a Maia pra ver! Tudo por causa dessa...": "A las seis llega la parte dos: un secreto de setenta años. ¡Sigue a Maia para verla! Todo por culpa de este...",
+    "PARTE 2 ÀS 18H": "PARTE 2 A LAS 6 PM"
+  },
+  "en": {
+    "Cabeça transparente, com os olhos lá dentro! E esse peixe existe.": "This fish has a see-through head, with its eyes inside! And it's real.",
+    "É DE VIDRO?": "GLASS HEAD",
+    "BICHOS INSANOS #8 · P1": "INSANE ANIMALS #8 · P1",
+    "TRANSPARENTE": "SEE-THROUGH",
+    "É o peixe-barril: vive a uns setecentos metros de fundo, quase sem luz.": "It's the barreleye fish: it lives about seven hundred meters deep, with almost no light.",
+    "PEIXE-BARRIL": "BARRELEYE",
+    "QUASE SEM LUZ": "ALMOST NO LIGHT",
+    "Essas bolinhas na frente? Não são olhos: são o nariz. Eu jurava que era olho!": "Those little dots in front? Not eyes: that's its nose. I was sure they were eyes!",
+    "NÃO É OLHO": "NOT EYES",
+    "OLHOS?": "EYES?",
+    "NARIZ!": "NOSE!",
+    "Os olhos de verdade são esses tubos verdes, virados pra cima.": "The real eyes are these green tubes, pointing straight up.",
+    "OLHOS-TUBO": "TUBE EYES",
+    "OLHOS DE VERDADE": "THE REAL EYES",
+    "Às seis tem a parte dois: um segredo de setenta anos. Segue a Maia pra ver! Tudo por causa dessa...": "Part two drops at six: a seventy-year secret. Follow Maia to see it! All because of this...",
+    "PARTE 2 ÀS 18H": "PART 2 AT 6 PM"
+  }
 }
